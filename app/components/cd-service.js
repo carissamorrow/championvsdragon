@@ -14,13 +14,14 @@ let _championAPI = axios.create({
 let _dragons = []
 let _champions = []
 
+
 export default class cdService {
   constructor() {
     console.log("cd service")
   }
 
   getDragons(draw) {
-    _dragonAPI.get()
+    _dragonAPI.get('')
       .then(res => {
         console.log(res.data)
         let dragonArr = []
@@ -33,7 +34,7 @@ export default class cdService {
 
   }
   getChampions(draw) {
-    _championAPI.get()
+    _championAPI.get('')
       .then(res => {
         let championArr = []
         res.data.forEach(championData => {
@@ -42,5 +43,9 @@ export default class cdService {
         _champions = championArr
         draw(championArr)
       })
+  }
+
+  set Dragon(id) {
+
   }
 }

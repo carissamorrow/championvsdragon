@@ -1,3 +1,9 @@
 body {
   background-color: gainsboro
 }
+.header {
+  font-size: 40px;
+  font-stretch: expanded;
+ color: aquamarine;
+ background-color: black
+}

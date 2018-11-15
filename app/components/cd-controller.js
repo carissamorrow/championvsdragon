@@ -5,7 +5,7 @@ let _cd = new cdService()
 function drawChampions(championArr) {
   let template = ''
   championArr.forEach(champion => {
-    template += champion.ChampionCard
+    template += champion.championCard
   });
   document.getElementById("champions").innerHTML = template
 }
@@ -21,7 +21,7 @@ function drawDragons(dragonArr) {
 export default class cdController {
   constructor() {
     console.log("cd controller")
-    // _cd.getChampions(drawChampions)
+    _cd.getChampions(drawChampions)
     _cd.getDragons(drawDragons)
   }
 }
