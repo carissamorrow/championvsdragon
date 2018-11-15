@@ -1,4 +1,4 @@
-export default class dragon {
+export default class Dragon {
   constructor(data) {
     this.name = data.name
     this.imgUrl = data.imgUrl
@@ -6,7 +6,7 @@ export default class dragon {
     this.attacks = data.attacks
   }
 
-  get dragonCard(button) {
+  get dragonCard() {
     return `
      <div class="col">
         <div class="card" style="width: 18rem;">
@@ -14,7 +14,7 @@ export default class dragon {
           <div class="card-body">
             <h4 class="card-title">${this.name}</h4>
             <p class="card-text">${this.class} - ${this.attacks}</p>
-            ${button}
+            <button class="btn btn-success" onclick="app.controllers.cdController.addDragon()${this.name})">Add</button>
           </div>
         </div>
       </div>

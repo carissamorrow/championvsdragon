@@ -1,4 +1,4 @@
-export default class champion {
+export default class Champion {
   constructor(data) {
     this.name = data.name
     this.imgUrl = data.imgUrl
@@ -6,7 +6,7 @@ export default class champion {
     this.currentHP = data.currentHP
   }
 
-  get championCard(button) {
+  get championCard() {
     return `
      <div class="col">
         <div class="card" style="width: 18rem;">
@@ -14,7 +14,7 @@ export default class champion {
           <div class="card-body">
             <h4 class="card-title">${this.name}</h4>
             <p class="card-text">${this.maxHP} - ${this.currentHP}</p>
-            ${button}
+        <button class="btn btn-success" onclick="app.controllers.cdController.addChampion(${this.name})">Add</button>
           </div>
         </div>
       </div>
