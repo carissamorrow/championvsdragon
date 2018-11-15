@@ -4,6 +4,7 @@ let _cd = new cdService()
 
 function drawChampions(championArr) {
   let template = ''
+  console.log(championArr)
   championArr.forEach(champion => {
     template += champion.championCard
   });
@@ -23,5 +24,11 @@ export default class cdController {
     console.log("cd controller")
     _cd.getChampions(drawChampions)
     _cd.getDragons(drawDragons)
+  }
+  setDragon(id) {
+    _cd.setDragon(id);
+  }
+  setChampion(id) {
+    _cd.setChampion(id)
   }
 }

@@ -11,8 +11,16 @@ let _championAPI = axios.create({
   baseURL: 'https://dragon-duel.herokuapp.com/api/champions'
 })
 
+// @ts-ignore
+let _gameAPI = axios.create({
+  baseURL: 'https://dragon-duel.herokuapp.com/api/games'
+})
+
+
 let _dragons = []
 let _champions = []
+let Games = []
+let gameId = []
 
 
 export default class cdService {
@@ -41,11 +49,28 @@ export default class cdService {
           championArr.push(new Champion(championData))
         })
         _champions = championArr
+        console.log(championArr)
         draw(championArr)
       })
   }
 
-  set Dragon(id) {
-
+  setDragon(id) {
+    Games.dragonId = id;
+  }
+  setChampion(id) {
+    Games.championId = id;
+  }
+  Games() {
+    if (
+      Games.hasOwnProperty("dragonId") &&
+      Games.hasOwnProperty("championId")
+    ) {
+      _championAPI.post("game", Games).then(res => {
+        gameId = res.data.game_id;
+      })
+      _dragonAPI.post("game", Games).then(res => {
+        gameId = res.data._id;
+      })
+    }
   }
 }

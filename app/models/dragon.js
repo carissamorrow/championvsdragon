@@ -1,5 +1,6 @@
 export default class Dragon {
   constructor(data) {
+    this.id = data.id
     this.name = data.name
     this.imgUrl = data.imgUrl
     this.class = data.class
@@ -12,8 +13,7 @@ export default class Dragon {
         <div class="card" style="width: 18rem;">
           <img class="card-img-top" src="${this.imgUrl}" />
           <div class="card-body">
-            <h4 class="card-title">${this.name}</h4>
-            <p class="card-text">${this.class} - ${this.attacks}</p>
+            <h4 class="card-title">${this.name} - ${this.id}</h4>
             <button class="btn btn-success" onclick="app.controllers.cdController.addDragon()${this.name})">Add</button>
           </div>
         </div>
