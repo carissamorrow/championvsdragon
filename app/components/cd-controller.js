@@ -1,6 +1,6 @@
 import cdService from "./cd-service.js"
 
-let _cd = new cdService()
+let _cdService = new cdService()
 
 function drawChampions(championArr) {
   let template = ''
@@ -19,16 +19,22 @@ function drawDragons(dragonArr) {
   document.getElementById("dragons").innerHTML = template
 }
 
+function drawSelectedDragon() { }
+//finish to get the single active dragon to show up when add is clicked
+
 export default class cdController {
   constructor() {
     console.log("cd controller")
-    _cd.getChampions(drawChampions)
-    _cd.getDragons(drawDragons)
+    _cdService.getChampions(drawChampions)
+    _cdService.getDragons(drawDragons)
   }
   setDragon(id) {
-    _cd.setDragon(id);
+    _cdService.setDragon(id);
   }
   setChampion(id) {
-    _cd.setChampion(id)
+    _cdService.setChampion(id)
+  }
+  addChampion(id) {
+    _cdService.getChampionById(id)
   }
 }

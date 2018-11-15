@@ -14,7 +14,7 @@ export default class Champion {
           <img class="card-img-top" src="${this.imgUrl}" />
           <div class="card-body">
             <h4 class="card-title">${this.name} - ${this.id}</h4>
-            <button class="btn btn-success" onclick="app.controllers.cdController.addChampion(${this.name})">Add</button>
+            <button class="btn btn-success" onclick="app.controllers.cdController.addChampion('${this.id}')">Play Character</button>
           </div>
         </div>
       </div>

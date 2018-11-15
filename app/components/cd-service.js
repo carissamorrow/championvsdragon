@@ -19,11 +19,18 @@ let _gameAPI = axios.create({
 
 let _dragons = []
 let _champions = []
-let Games = []
-let gameId = []
+let newGames = {}
+let gameId = ""
 
 
 export default class cdService {
+
+  getChampionById(id, drawCallback) {
+    let targetChampion = _champions.find(person => person.id == id)
+    //add an id to html so I can document.getelembyid on controller
+    //need element on DOM to hold template
+    //need to make draw function to create above template
+  }
   constructor() {
     console.log("cd service")
   }
@@ -55,20 +62,20 @@ export default class cdService {
   }
 
   setDragon(id) {
-    Games.dragonId = id;
+    newGames.dragonId = id;
   }
   setChampion(id) {
-    Games.championId = id;
+    newGames.championId = id;
   }
   Games() {
     if (
-      Games.hasOwnProperty("dragonId") &&
-      Games.hasOwnProperty("championId")
+      newGames.hasOwnProperty("dragonId") &&
+      newGames.hasOwnProperty("championId")
     ) {
-      _championAPI.post("game", Games).then(res => {
+      _championAPI.post("game", newGames).then(res => {
         gameId = res.data.game_id;
       })
-      _dragonAPI.post("game", Games).then(res => {
+      _dragonAPI.post("game", newGames).then(res => {
         gameId = res.data._id;
       })
     }
