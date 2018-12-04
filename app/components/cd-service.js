@@ -1,4 +1,4 @@
-import Dragon from "../models/Dragon.js";
+import Dragon from "../models/dragon.js";
 import Champion from "../models/champion.js";
 
 // @ts-ignore
