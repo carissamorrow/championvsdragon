@@ -20,16 +20,18 @@ let _gameAPI = axios.create({
 let _dragons = []
 let _champions = []
 let newGames = {}
-let gameId = ""
+let gameId = ''
 
 
 export default class cdService {
+  getDragonById(id, drawCallback) {
+    let targetDragon = _dragons.find(dragon => dragon.id == id)
+    //finish this section 
+  }
 
   getChampionById(id, drawCallback) {
     let targetChampion = _champions.find(person => person.id == id)
-    //add an id to html so I can document.getelembyid on controller
-    //need element on DOM to hold template
-    //need to make draw function to create above template
+    //finish this section 
   }
   constructor() {
     console.log("cd service")
