@@ -1,5 +1,8 @@
 body {
-  background-color: gainsboro
+  background-image: url("https://doryseye.files.wordpress.com/2012/09/209b.jpg?w=1545&h=1030");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 .header {
   font-size: 50px;
@@ -9,4 +12,14 @@ body {
  text-align: center;
  font-weight: 500;
  text-shadow: 2px 2px #ff0000;
+}
+.banana{
+  font-size: 40px;
+   color: #fa0c0c;
+   text-shadow: 2px 2px black
+}
+.banana2{
+  font-size: 40px;
+    color: #fa0c0c;
+   text-shadow: 2px 2px black
 }
