@@ -1,5 +1,5 @@
 import cdService from "./cd-service.js"
-import Dragon from "../models/dragon.js";
+
 
 let _cdService = new cdService()
 
@@ -20,9 +20,6 @@ function drawDragons(dragonArr) {
   document.getElementById("dragons").innerHTML = template
 }
 
-function drawSelectedDragon() { }
-
-//finish to get the single active dragon to show up when add is clicked
 
 export default class cdController {
   constructor() {
