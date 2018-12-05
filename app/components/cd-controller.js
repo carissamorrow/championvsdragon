@@ -1,5 +1,5 @@
 import cdService from "./cd-service.js"
-import Dragon from "../models/Dragon.js";
+import Dragon from "../models/dragon.js";
 
 let _cdService = new cdService()
 
